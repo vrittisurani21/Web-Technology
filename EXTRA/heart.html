@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+    <style>
+        #bg{
+            background-color: black;
+            height: 680px;
+        }
+        #main{
+            rotate: 45deg;
+            padding-top: 300px;
+            padding-left: 300px;
+        }
+
+       #heart1{
+        background-color: black;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        margin-top: 150px;
+        margin-left: 200px;
+       }
+
+       #heart2{
+        position: absolute;
+        background-color: black;
+        height: 200px;
+        width: 200px;
+      
+        margin-top: 50px;
+        margin-left: 200px;
+        border-radius: 100px;
+       }
+
+       #heart3{
+        position: absolute;
+        background-color: black;
+        height: 200px;
+        width: 200px;
+      
+        margin-top: 150px;
+        margin-left: 100px;
+        border-radius: 100px;
+       }
+    </style>
+</head>
+<body>
+    <div id="bg">
+    <div id="main" >
+    <div id="heart1" onclick="randomcolor()"></div>
+    <div id="heart2" onclick="randomcolor()"></div>
+    <div id="heart3" onclick="randomcolor()"></div>
+    </div>
+    </div>
+
+		
+		
+		
+		<script type="text/javascript">
+			function randomcolor()
+			{
+				var x = (Math.random() * 255);
+    			var y = (Math.random() * 255);
+    			var z = (Math.random() * 255);
+    			document.getElementById("heart1").style.backgroundColor="rgb(" + x + "," + y + "," + z + ")";
+                document.getElementById("heart2").style.backgroundColor="rgb(" + x + "," + y + "," + z + ")";
+                document.getElementById("heart3").style.backgroundColor="rgb(" + x + "," + y + "," + z + ")";
+                
+			}
+			randomcolor();
+			
+		</script>
+</body>
+</html>
