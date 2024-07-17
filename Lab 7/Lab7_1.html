@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CallBack using Calculator</title>
+</head>
+<body>
+	<table border="1">
+		<tr style="height: 30px;">
+			<td colspan="4" id="ans"></td>
+			<td colspan="2">
+				<input type="button" value="C" onclick="Clrdisplay('C')" onkeydown="Clrdisplay('C')">  </td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" value="7" onclick="display('7')">
+				<input type="button" value="8" onclick="display('8')">
+				<input type="button" value="9" onclick="display('9')">
+				<input type="button" value="*" onclick="display('*')">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" value="4" onclick="display('4')">
+				<input type="button" value="5" onclick="display('5')">
+				<input type="button" value="6" onclick="display('6')">
+				<input type="button" value="-" onclick="display('-')">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<input type="button" value="1" onclick="display('1')">
+				<input type="button" value="2" onclick="display('2')">
+				<input type="button" value="3" onclick="display('3')">
+				<input type="button" value="+" onclick="display('+')">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<input type="button" value="0" onclick="display('0')">
+				<input type="button" value="." onclick="display('.')">
+				<input type="button" value="=" onclick="calculate('=')">
+				<input type="button" value="/" onclick="display('/')">
+			</td>
+		</tr>
+
+		<script type="text/javascript">
+
+			  function display(value){
+                n = document.getElementById('ans');
+                n.innerHTML += value;
+            }
+
+           function Clrdisplay(){
+                n = document.getElementById('ans');
+                n.innerHTML = "";  
+            }
+
+           function calculate(final){
+                n = document.getElementById('ans');
+                final = eval(n.innerHTML);
+                n.innerHTML = final;
+            }
+
+           function callBack(call) {
+                document.getElementById("ans").innerHTML = call;
+           }
+
+           function myCalculator(num1, num2, myCallback) {
+                let multiply = num1 * num2;
+                myCallback(multiply);
+           }
+
+           myCalculator(10, 10, callBack);
+
+
+		</script>
+	</table>
+</body>
+</html>

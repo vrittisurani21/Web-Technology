@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Spread Operator</title>
+</head>
+<body>
+	<p>The spread operator is often used to extract only what's needed from an array:</p>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+
+	<script>
+//example 1
+		const numbers = [1, 2, 3, 4, 5, 6];
+
+        const [one, two, ...rest] = numbers;
+
+        document.getElementById("one").innerHTML = one; 
+        document.getElementById("two").innerHTML = two; 
+        document.getElementById("three").innerHTML = rest; 
+
+//example 2(object)       
+
+         const myVehicle = {
+            brand: 'Ford',
+            model: 'Mustang',
+            color: 'red'
+         }
+
+         const updatedMyVehicle = {
+            type: 'car',
+            year: 2021, 
+            color: 'yellow'
+         }
+
+         const myUpdatedVehicle = {...myVehicle, ...updatedMyVehicle}
+
+         console.log(myUpdatedVehicle);
+
+</script>
+</body>
+</html>

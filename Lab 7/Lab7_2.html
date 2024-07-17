@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Var v/s Let v/s Const</title>
+</head>
+<body>
+	<script type="text/javascript">
+		 const a=10; 
+
+		function abc(){
+			var a=20;  
+
+			if(true){
+				let a=30;  
+				console.log("value of a inside the block:",a);
+			}
+			console.log("value of a inside the function:",a);
+		}
+		abc();
+		console.log("value of a outside the function:",a);
+	</script>
+</body>
+</html>
