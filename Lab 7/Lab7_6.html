@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Destructuring</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//Object Destructuring
+		const student={
+			name:'vritti',
+			age:19,
+			phone:1234567890,
+			email:'vrittisurani@gmail.com'
+		}
+		let {name,email}=student
+
+		console.log("name:",name);
+		console.log("email:",email);
+
+		//Array Destructuring
+		students=['vritti','surani',19,'vrittisurani@gmail.com']
+		let [fn,ln,age,Email]=students;
+		fn=students[0];
+		ln=students[1];
+		age=students[2];
+		Email=students[3];
+
+		console.log("first name:",fn);
+		console.log("age:",age);
+		
+	</script>
+</body>
+</html>

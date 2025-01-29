@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab 2(5)</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function separateAndMultiply(number) {
+			if (number >= 10 && number <= 99) {
+				const firstDigit = Math.floor(number / 10);
+				const secondDigit = number % 10;
+				return firstDigit * secondDigit;
+			} 
+			else {
+			return "Please enter a valid 2-digit number.";
+		}
+	}
+	const inputNumber = 22; 
+	const result = separateAndMultiply(inputNumber);
+	console.log(`Result: ${result}`);
+
+	</script>
+</body>
+</html>

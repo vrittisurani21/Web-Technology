@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4_2</title>
+</head>
+<body>
+    <script>
+        Student=['Vritti','Surani','Rajkot','India'];
+        Student.pop();
+        document.write("pop: "+Student);
+        document.write('<br>');
+
+        Student=['Vritti','Surani','Rajkot','India'];
+        Student.push('Gujarat');
+        document.write("push: "+Student);
+        document.write('<br>');
+
+        Student=['Vritti','Surani','Rajkot','India'];
+        Student.shift();
+        document.write("shift: "+Student);
+        document.write('<br>');
+
+        Student=['Vritti','Surani','Rajkot','India'];
+        Student.unshift('gujarat');
+        document.write("unshift: "+Student);
+        document.write('<br>');
+
+        Student=['Vritti','Surani','Rajkot','India'];
+        Student.sort();
+        document.write("sort: "+Student);
+        document.write('<br>');
+
+        Student=['Vritti','Surani','Rajkot','India'];
+        Student.splice(0,2,'Surat');
+        document.write("splice: "+Student);
+        document.write('<br>');
+
+    </script>
+</body>
+</html>

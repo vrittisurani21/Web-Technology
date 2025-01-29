@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 6_9</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press a vowel key:</h1>
+    <button id="myButton">Click Me!</button> 
+
+
+    <script>
+        const button = document.getElementById('myButton');
+        let isVowelPressed = false;
+
+        
+        function handleKeyDown(event) {
+            const key = event.key.toLowerCase();
+            if (key === 'a' || key === 'e' || key === 'i' || key === 'o' || key === 'u') {
+                isVowelPressed = true;
+                button.style.backgroundColor = 'blue';
+                alert('Vowel "${key}" pressed!');
+            }
+        }
+
+        
+        function handleKeyUp() {
+            if (isVowelPressed) {
+                button.style.backgroundColor = 'blue'; 
+                isVowelPressed = false;
+            }
+        }
+
+        
+        button.addEventListener('keydown', handleKeyDown);
+        button.addEventListener('keyup', handleKeyUp);
+    </script>
+</body>
+</html>

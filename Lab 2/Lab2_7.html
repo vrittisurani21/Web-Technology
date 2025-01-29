@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Position</title>
+</head>
+<body>
+    <script>
+        function findFirstVowelPosition(word) {
+            const vowels = /[aeiou]/i; 
+            const match = word.match(vowels);
+            return match ? match.index : -1;
+        }
+
+        function findLastVowelPosition(word) {
+            const vowels = /[aeiou]/ig; 
+            const matches = [...word.matchAll(vowels)];
+            return matches.length > 0 ? matches[matches.length - 1].index : -1;
+        }
+
+        function extractSubstringBetweenVowels(word) {
+            const firstVowelIndex = findFirstVowelPosition(word);
+            const lastVowelIndex = findLastVowelPosition(word);
+
+            if (firstVowelIndex === -1 || lastVowelIndex === -1) {
+                return "No vowels found in the word.";
+            }
+
+            const substring = word.substring(firstVowelIndex + 1, lastVowelIndex);
+            return substring;
+        }
+
+        const inputWord = "example"; 
+        const result = extractSubstringBetweenVowels(inputWord);
+        console.log(`Substring between first and last vowels: ${result}`);
+    </script>
+</body>
+</html>

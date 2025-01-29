@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox List</title>
+</head>
+<body>
+    <h2>Select Items</h2>
+    <div>
+        <input type="checkbox" class="item" value="Item 1"> Item 1<br>
+        <input type="checkbox" class="item" value="Item 2"> Item 2<br>
+        <input type="checkbox" class="item" value="Item 3"> Item 3<br>
+        <input type="checkbox" class="item" value="Item 4"> Item 4<br>
+    </div>
+    <h3>Selected Items:</h3>
+    <p id="selectedItems"></p>
+
+    <script>
+        document.addEventListener('Content', function() {
+            const checkboxes = document.querySelectorAll('.item');
+            const selectedItems = document.getElementById('selectedItems');
+
+            checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateSelectedItems);
+        });
+
+        function updateSelectedItems() {
+            const selectedValues = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value)
+            .join(', ');
+
+            selectedItems.textContent = selectedValues;
+        }
+    });
+
+    </script>
+</body>
+</html>

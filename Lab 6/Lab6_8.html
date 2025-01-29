@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    #text{
+        font-size: 20px;
+        margin-left: 2%;
+    }
+
+    #bg{
+        background-color: black;
+        border-radius: 15px;
+        height: 20vh;
+        width: 10%;
+        margin-left: 2%;
+    }
+
+    button{
+        margin-left: 2%;
+    }
+</style>
+<body>
+    <div id="text" onmousemove="yellow()" onmouseout="black()">This will turn yellow when you move over it and balck when you move out</div><br><br>
+    <div id="bg"></div><br><br>
+    <button onclick="red()">Red</button>
+    <button onclick="green()">Green</button>
+    <button onclick="date()">Click Me!</button>
+    <p id="p1"></p>
+    <script>
+        function yellow(){
+            document.getElementById("text").style.color="yellow";
+        }
+
+        function black(){
+            document.getElementById("text").style.color="black";
+        }
+
+        function red(){
+            document.getElementById("bg").style.background="red";
+        }
+
+        function green(){
+            document.getElementById("bg").style.background="green";
+        }
+
+        function date(){
+            var date = new Date();
+            document.getElementById("p1").innerHTML = date;
+        }
+    </script>
+</body>
+</html>

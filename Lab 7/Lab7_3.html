@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Default Parameter</title>
+</head>
+<body>
+
+  <h1>JavaScript Functions</h1>
+  <h2>Default Parameter Values</h2>
+  <p>If y is not passed or undefined, then y = 10:</p>
+
+  <p id="demo1"></p>
+  <br>
+  <p>If y is not passed or undefined, then y = 2:</p>
+
+  <p id="demo2"></p>
+
+  <script>
+      function myFunction1(x, y = 10) {
+        return x + y;
+      }
+      document.getElementById("demo1").innerHTML = myFunction1(5);
+
+
+      function myFunction2(x, y) {
+        if (y === undefined) {
+          y = 2;
+        }  
+        return x * y;
+      }
+      document.getElementById("demo2").innerHTML = myFunction2(4);
+  </script>
+
+</body>
+</html>

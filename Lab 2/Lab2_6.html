@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number to Words</title>
+</head>
+<body>
+
+  <div id="result"></div>
+
+  <script>
+
+      const numInput = prompt("Enter a number between 0 and 999:");
+      let result = "";
+
+      if (isNaN(numInput)) {
+        result = "Not a number";
+      } 
+      else if (numInput < 0 || numInput > 999) {
+        result = "Out of range";
+      } 
+      else {
+        const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+        const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+        const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+        const hundreds = ["", "one hundred", "two hundred", "three hundred", "four hundred", "five hundred", "six hundred", "seven hundred", "eight hundred", "nine hundred"];
+
+        let num = parseInt(numInput);
+        let hundredsDigit = Math.floor(num / 100);
+        let tensDigit = Math.floor((num % 100) / 10);
+        let onesDigit = num % 10;
+
+        if (hundredsDigit > 0) {
+          result += hundreds[hundredsDigit] + " ";
+        }
+
+        if (tensDigit > 1) {
+          result += tens[tensDigit] + " ";
+          if (onesDigit > 0) {
+            result += ones[onesDigit];
+          }
+        } else if (tensDigit === 1) {
+          result += teens[onesDigit];
+        } else {
+          result += ones[onesDigit];
+        }
+      }
+
+      document.getElementById("result").innerHTML = result;
+    
+  </script>
+</body>
+</html>
